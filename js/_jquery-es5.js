@@ -561,3 +561,59 @@ $(document).ready(function()
 });
 /* */
 }
+
+function ex_local_storage() {
+/*With web storage, web applications can store data locally within the user's browser.
+
+Before HTML5, application data had to be stored in cookies, included in every server request. Web storage is more secure, and large amounts of data can be stored locally, without affecting website performance.
+
+Unlike cookies, the storage limit is far larger (at least 5MB) and information is never transferred to the server.
+
+Web storage is per origin (per domain and protocol). All pages, from one origin, can store and access the same data. */
+/*The localStorage and sessionStorage properties allow to save key/value pairs in a web browser.
+
+The localStorage object stores data with no expiration date. The data will not be deleted when the browser is closed, and will be available the next day, week, or year.
+
+The localStorage property is read-only. */
+
+    clog("previous localStorage tempLSVar is " + localStorage.getItem("tempLSVar"));
+
+    setTimeout(function(){
+
+        //set new localStorage variable
+        localStorage.setItem("tempLSVar", "zplonk" + Date.now());
+
+        clog("new localStorage tempLSVar is " + localStorage.getItem("tempLSVar"));
+
+        //clear local storage variable
+        //localStorage.removeItem("tempLSVar");
+        
+        //clear local storage 
+        //localStorage.clear();
+
+    }, 50);
+
+}
+
+function ex_session_storage() {
+/*sessionStorage allow to save key/value pairs in a web browser.
+
+The sessionStorage object stores data for only one session (the data is deleted when the browser tab is closed). */
+
+    clog("previous sessionStorage tempSSVar is " + sessionStorage.getItem("tempSSVar"));
+
+    setTimeout(function(){
+
+        //set new sessionStorage variable
+        sessionStorage.setItem("tempSSVar", "zplonk" + Date.now());
+
+        clog("new sessionStorage tempSSVar is " + sessionStorage.getItem("tempSSVar"));
+
+        //clear session storage variable
+        //sessionStorage.removeItem("tempSSVar");
+
+        //clear session storage 
+        //sessionStorage.clear();
+
+    }, 50);
+}
