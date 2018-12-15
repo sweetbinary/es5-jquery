@@ -76,7 +76,7 @@ var t = setInterval("tock()", 500);
 function tock()
 {
     tockValue++;
-    clog(tockValue);        
+    console.log(tockValue);        
 }
 //clearInterval(t);
 */
@@ -107,7 +107,7 @@ function ex_detect_browser() {
     function get_browser(){      
         const t = this;    
         const user = navigator.userAgent.toLowerCase();        
-        let browser = 'other';
+        var browser = 'other';
         if ( user.includes('edge') ) {
             browser = 'edge';
         }
@@ -122,13 +122,11 @@ function ex_detect_browser() {
         }
         else if ( user.includes('trident') ) {
             browser = 'ie';
-        }        
-        //t.clog(user);
-        //t.clog(`${browser} browser detected\n\n`);        
+        }
         return browser;  
     }
     var tempVar = get_browser();    
-    clog(tempVar);
+    console.log(tempVar);
 /**/
 }
 
@@ -576,14 +574,14 @@ The localStorage object stores data with no expiration date. The data will not b
 
 The localStorage property is read-only. */
 
-    clog("previous localStorage tempLSVar is " + localStorage.getItem("tempLSVar"));
+    console.log("previous localStorage tempLSVar is " + localStorage.getItem("tempLSVar"));
 
     setTimeout(function(){
 
         //set new localStorage variable
         localStorage.setItem("tempLSVar", "zplonk" + Date.now());
 
-        clog("new localStorage tempLSVar is " + localStorage.getItem("tempLSVar"));
+        console.log("new localStorage tempLSVar is " + localStorage.getItem("tempLSVar"));
 
         //clear local storage variable
         //localStorage.removeItem("tempLSVar");
@@ -600,14 +598,14 @@ function ex_session_storage() {
 
 The sessionStorage object stores data for only one session (the data is deleted when the browser tab is closed). */
 
-    clog("previous sessionStorage tempSSVar is " + sessionStorage.getItem("tempSSVar"));
+    console.log("previous sessionStorage tempSSVar is " + sessionStorage.getItem("tempSSVar"));
 
     setTimeout(function(){
 
         //set new sessionStorage variable
         sessionStorage.setItem("tempSSVar", "zplonk" + Date.now());
 
-        clog("new sessionStorage tempSSVar is " + sessionStorage.getItem("tempSSVar"));
+        console.log("new sessionStorage tempSSVar is " + sessionStorage.getItem("tempSSVar"));
 
         //clear session storage variable
         //sessionStorage.removeItem("tempSSVar");
